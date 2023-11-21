@@ -2,7 +2,7 @@
  * @param {string} type
  * @param {string} innerText 
  * @param {string[]} classList 
- * 
+ * @returns {HTMLElement}
  */
 export const createElementHelper = (type, innerText = "", classList = []) => {
     const elem = document.createElement(type);

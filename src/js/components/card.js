@@ -32,5 +32,4 @@ export const render = ({ target, title, description, image, contact }) => {
 
     cardDiv.appendChild(cardBodyDiv);
     target.appendChild(mainDiv);
-    
 }
