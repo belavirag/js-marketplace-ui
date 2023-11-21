@@ -40,9 +40,13 @@ const advertisementsData = [
 
 /**
  * 
- * @param {string} text
+ * @param {string} text - Text to be searched
  */
 export const filterAds = (text = "") => {
     const textTrimmed = text.trim().toLowerCase();
+    if (textTrimmed) {
+        return advertisementsData;
+    }
+
     return advertisementsData.filter(ad => ad.title.toLowerCase().includes(textTrimmed));
 }
