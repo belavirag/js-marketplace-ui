@@ -19,22 +19,15 @@ export const render = ({ target, title, description, image, contact }) => {
     cardDiv.appendChild(img);
 
     const cardBodyDiv = createElementHelper("div", "", ["card-body"]);
-    const cardTitle = createElementHelper("h5", title, ["card-title"]);
+    const cardTitle = createElementHelper("h5", title, ["card-title", "fw-bold"]);
     cardBodyDiv.appendChild(cardTitle);
     const cardText = createElementHelper("p", description, ["card-text"]);
     cardBodyDiv.appendChild(cardText);
-    const cardButton = createElementHelper("button", "Details", ["btn", "btn-primary"]);
-    const contactDetails = createElementHelper("p", contact, ["card-text"]);
-    contactDetails.hidden = true;
+    const cardButton = createElementHelper("button", "Details", ["btn", "btn-primary", "w-100"]);
+    const contactDetails = createElementHelper("p", "Contact: ***", ["card-text"]);
     cardBodyDiv.appendChild(contactDetails);
 
-    cardButton.addEventListener('click', (e) => {
-        const infoElem = e.target.parentElement.children;
-        const info = infoElem[infoElem.length - 2];
-
-        info.hidden = !info.hidden;
-        e.target.innerText = info.hidden ? "Details" : "Hide";
-    });
+    cardButton.addEventListener('click', () => alert("Contact: " + contact));
     cardBodyDiv.appendChild(cardButton);
 
     cardDiv.appendChild(cardBodyDiv);
