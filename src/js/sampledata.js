@@ -44,9 +44,5 @@ const advertisementsData = [
  */
 export const filterAds = (text = "") => {
     const textTrimmed = text.trim().toLowerCase();
-    if (textTrimmed) {
-        return advertisementsData;
-    }
-
     return advertisementsData.filter(ad => ad.title.toLowerCase().includes(textTrimmed));
 }
