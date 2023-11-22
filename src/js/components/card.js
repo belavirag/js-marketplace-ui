@@ -25,6 +25,13 @@ export const render = ({ target, title, description, image, contact }) => {
     cardBodyDiv.appendChild(cardText);
     const cardButton = createElementHelper("button", "Details", ["btn", "btn-info", "shadow", "w-100"]);
     const contactDetails = createElementHelper("p", "Contact: ***", ["card-text"]);
+    contactDetails.addEventListener('click', (e) => {
+        if (e.target.innerText.includes("***")) {
+            e.target.innerText = `Contact: ${contact}`;
+        } else {
+            e.target.innerText = "Contact: ***";
+        }
+    });
     cardBodyDiv.appendChild(contactDetails);
 
     cardButton.addEventListener('click', () => alert("Contact: " + contact));
