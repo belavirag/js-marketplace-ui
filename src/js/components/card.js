@@ -23,7 +23,7 @@ export const render = ({ target, title, description, image, contact }) => {
     cardBodyDiv.appendChild(cardTitle);
     const cardText = createElementHelper("p", description, ["card-text"]);
     cardBodyDiv.appendChild(cardText);
-    const cardButton = createElementHelper("button", "Details", ["btn", "btn-primary", "w-100"]);
+    const cardButton = createElementHelper("button", "Details", ["btn", "btn-info", "shadow", "w-100"]);
     const contactDetails = createElementHelper("p", "Contact: ***", ["card-text"]);
     cardBodyDiv.appendChild(contactDetails);
 
